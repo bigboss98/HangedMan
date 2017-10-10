@@ -3,7 +3,15 @@ package com.HangedMan;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Programma che simula il gioco dell'Impiccato
+ * Authors Bigboss98 Gianlo98
+ * Version 0.1
+ */
 public class HangedMan {
+
+	public static final int MAX_ERRORS = 8;
+	public static final int LENGTH_WINDOW = 8;
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -62,7 +70,7 @@ public class HangedMan {
 	
 	public static void printHangedMan(int errors) {
 		
-		String[] hangedManarray = new String[8];
+		String[] hangedManarray = new String[LENGHT_WINDOW];
 		
 		 hangedManarray[0] = "|___";
 		 hangedManarray[1] = (errors >= 0) ? "|" : "";
@@ -73,7 +81,7 @@ public class HangedMan {
 		 hangedManarray[6] = (errors >= 2) ? "|/     |" : "";
 		 hangedManarray[7] = (errors >= 3) ? "____________" : "";
 		
-		for(int i = 7; i >= 0 ; i--) {
+		for(int i = LENGHT_WINDOW - 1; i >= 0 ; i--) {
 			System.out.println(hangedManarray[i]);
 		}
 		
