@@ -18,6 +18,7 @@ public class HangedMan {
 		Scanner input = new Scanner(System.in);
 		char insertedChar;
 		String secretWord;
+		String word;
 		int errors = 0;
 		
 		secretWord = insertSecretWord();
@@ -34,6 +35,7 @@ public class HangedMan {
 			if(secretWord.contains(insertedChar)) {
 				System.out.println("Bravo la lettera " + insertedChar + " è contenuta la parola segreta");
 				int index = secretWord.indexOf(insertedChar);
+				word[index] = insertedChar;
 
 			}else{
 				errors++;
@@ -41,7 +43,7 @@ public class HangedMan {
 			
 			
 			
-			printHangedMan(errors);
+			printHangedMan(errors,word);
 			
 		}
 		
@@ -69,9 +71,12 @@ public class HangedMan {
 	 * 
 	 */
 	
-	
-	
-	public static void printHangedMan(int errors) {
+	/**
+	 * Metodo che stampa l'impiccato
+	 * Parametri: numero degli errori e la stringa della parola conosciuta al momento
+	 * Return void
+	 */
+	public static void printHangedMan(int errors,String word) {
 		
 		String[] hangedManarray = new String[LENGHT_WINDOW];
 		
@@ -87,6 +92,8 @@ public class HangedMan {
 		for(int i = LENGHT_WINDOW - 1; i >= 0 ; i--) {
 			System.out.println(hangedManarray[i]);
 		}
+
+		System.out.println("Parola trovata ad ora: " + word);
 		
 
 	}
