@@ -19,42 +19,51 @@ public class HangedMan {
 		String insertedChar;
 		String secretWord;
 		int errors = 0;
-		
+		boolean isWin = false;
+
 		secretWord = insertSecretWord();
 
 		int lengthWord = secretWord.length();
 		char[] word = new char[lengthWord];
 
-		System.out.print("\033[H\033[2J");
+		System.out.print("\033[H\033[2J");//GIANLO COSA HAI MESSO??????????
 		System.out.flush();
 		
 		//Turno di gioco
-		while(errors <= MAX_ERRORS) {
+		while(errors <= MAX_ERRORS && !isWin) {
 			
-			System.out.println("Tenta una lettera:");
-			insertedChar = input.next();//Lettura carattere
+			System.out.println("\nTenta una lettera:");
+			insertedChar = input.nextLine();//Lettura carattere
+
+			//Controllo inserimento di soltanto un carattere
+			while(insertedChar.length() > 1){
+				System.out.println("ERROR!!!! Devi inserire soltanto una lettera.");
+				System.out.println("Inserisci lettera!!!");
+				insertedChar = input.nextLine();
+			}
 			
+			//Controllo occorenze tra lettera inserita e la parola segreta
 			if(secretWord.contains(insertedChar)) {
 				System.out.println("Bravo la lettera " + insertedChar + " è contenuta la parola segreta");
 				int index = secretWord.indexOf(insertedChar);
 				word[index] = insertedChar.charAt(0);
 
 			}else{
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
 				errors++;
 			}
+
+			//Controllo vittoria
+			if(secretWord.equals(word)){
+				isWin = true;
+			}
 			
-			
-			
-			printHangedMan(errors,word);
+			printHangedMan(errors,word,lengthWord);
 			
 		}
 		
 		System.out.println("Fine, hai perso!!!");
-		System.exit(0);
-		
-		
-		
-		
+		System.exit(0);		
 		
 	}
 	
@@ -78,7 +87,7 @@ public class HangedMan {
 	 * Parametri: numero degli errori e la stringa della parola conosciuta al momento
 	 * Return void
 	 */
-	public static void printHangedMan(int errors,char[] word) {
+	public static void printHangedMan(int errors,char[] word,int lengthWord) {
 		
 		String[] hangedManarray = new String[LENGTH_WINDOW];
 		
@@ -95,11 +104,13 @@ public class HangedMan {
 			System.out.println(hangedManarray[i]);
 		}
 
-		for(char x : word){
-			if(x == ' '){
-				System.out.print("_ ");
+		
+		//NON RIESCO A MOSTRARE LE PAROLE TROVATE
+		for(int x = 0; x < lengthWord;++x){
+			if(word[x] == ' '){
+				System.out.print("  ");
 			}else{
-				System.out.print(x);
+				System.out.print(word[x]);
 			}
 		}
 		
