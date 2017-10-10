@@ -15,30 +15,33 @@ public class HangedMan {
 	
 	public static void main(String[] args) throws IOException {
 		
-		Scanner scanner = new Scanner(System.in);
-		CharSequence insertedChar;
-		
-		System.out.println("Inserisci la parola segreta: ");
-		String secretWord = scanner.nextLine();
-		
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
-
-
+		Scanner input = new Scanner(System.in);
+		char insertedChar;
+		String secretWord;
 		int errors = 0;
 		
-		while(errors <= 8) {
+		secretWord = insertSecretWord();
+
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+		
+		//Turno di gioco
+		while(errors <= MAX_ERRORS) {
 			
 			System.out.println("Tenta una lettera:");
-			//insertedChar = scanner.next().charAt(0);
+			insertedChar = input.nextChar();
 			
-			/*if(secretWord.contains(insertedChar)) {
-				
-			}*/
+			if(secretWord.contains(insertedChar)) {
+				System.out.println("Bravo la lettera " + insertedChar + " è contenuta la parola segreta");
+				int index = secretWord.indexOf(insertedChar);
+
+			}else{
+				errors++;
+			}
 			
 			
 			
-			printHangedMan(errors++);
+			printHangedMan(errors);
 			
 		}
 		
@@ -86,6 +89,16 @@ public class HangedMan {
 		}
 		
 
+	}
+
+	/**
+	 * Metodo che inserisce la parola segreta tramite inserimento dell'Utente
+	 * Ritorna la stringa inserita
+	 */
+	public static boolean insertSecretWord(void){
+		System.out.println("Inserisci la parola segreta: ");
+		String word = input.nextLine();
+		return word;
 	}
 
 }
