@@ -1,45 +1,69 @@
-package com.HangedMan;
+
 
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Programma che simula il gioco dell'Impiccato
+ * Authors Bigboss98 Gianlo98
+ * Version 0.1
+ */
 public class HangedMan {
+
+	public static final int MAX_ERRORS = 8;
+	public static final int LENGTH_WINDOW = 8;
+	static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) throws IOException {
 		
-		Scanner scanner = new Scanner(System.in);
-		CharSequence insertedChar;
-		
-		System.out.println("Inserisci la parola segreta: ");
-		String secretWord = scanner.nextLine();
-		
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
-
-
+		String insertedChar;
+		String secretWord;
 		int errors = 0;
+		boolean isWin = false;
+
+		secretWord = insertSecretWord();
+
+		int lengthWord = secretWord.length();
+		char[] word = new char[lengthWord];
+
+		System.out.print("\033[H\033[2J");//GIANLO COSA HAI MESSO??????????
+		System.out.flush();
 		
-		while(errors <= 8) {
+		//Turno di gioco
+		while(errors <= MAX_ERRORS && !isWin) {
 			
-			System.out.println("Tenta una lettera:");
-			//insertedChar = scanner.next().charAt(0);
+			System.out.println("\nTenta una lettera:");
+			insertedChar = input.nextLine();//Lettura carattere
+
+			//Controllo inserimento di soltanto un carattere
+			while(insertedChar.length() > 1){
+				System.out.println("ERROR!!!! Devi inserire soltanto una lettera.");
+				System.out.println("Inserisci lettera!!!");
+				insertedChar = input.nextLine();
+			}
 			
-			/*if(secretWord.contains(insertedChar)) {
-				
-			}*/
+			//Controllo occorenze tra lettera inserita e la parola segreta
+			if(secretWord.contains(insertedChar)) {
+				System.out.println("Bravo la lettera " + insertedChar + " è contenuta la parola segreta");
+				int index = secretWord.indexOf(insertedChar);
+				word[index] = insertedChar.charAt(0);
+
+			}else{
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				errors++;
+			}
+
+			//Controllo vittoria
+			if(secretWord.equals(word)){
+				isWin = true;
+			}
 			
-			
-			
-			printHangedMan(errors++);
+			printHangedMan(errors,word,lengthWord);
 			
 		}
 		
 		System.out.println("Fine, hai perso!!!");
-		System.exit(0);
-		
-		
-		
-		
+		System.exit(0);		
 		
 	}
 	
@@ -58,11 +82,14 @@ public class HangedMan {
 	 * 
 	 */
 	
-	
-	
-	public static void printHangedMan(int errors) {
+	/**
+	 * Metodo che stampa l'impiccato
+	 * Parametri: numero degli errori e la stringa della parola conosciuta al momento
+	 * Return void
+	 */
+	public static void printHangedMan(int errors,char[] word,int lengthWord) {
 		
-		String[] hangedManarray = new String[8];
+		String[] hangedManarray = new String[LENGTH_WINDOW];
 		
 		 hangedManarray[0] = "|___";
 		 hangedManarray[1] = (errors >= 0) ? "|" : "";
@@ -73,11 +100,31 @@ public class HangedMan {
 		 hangedManarray[6] = (errors >= 2) ? "|/     |" : "";
 		 hangedManarray[7] = (errors >= 3) ? "____________" : "";
 		
-		for(int i = 7; i >= 0 ; i--) {
+		for(int i = LENGTH_WINDOW - 1; i >= 0 ; i--) {
 			System.out.println(hangedManarray[i]);
+		}
+
+		
+		//NON RIESCO A MOSTRARE LE PAROLE TROVATE
+		for(int x = 0; x < lengthWord;++x){
+			if(word[x] == ' '){
+				System.out.print("  ");
+			}else{
+				System.out.print(word[x]);
+			}
 		}
 		
 
+	}
+
+	/**
+	 * Metodo che inserisce la parola segreta tramite inserimento dell'Utente
+	 * Ritorna la stringa inserita
+	 */
+	public static String insertSecretWord(){
+		System.out.println("Inserisci la parola segreta: ");
+		String word = input.nextLine();
+		return word;
 	}
 
 }
