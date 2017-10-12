@@ -120,6 +120,8 @@ public class HangedMan {
 	/**
 	 * Metodo che inserisce la parola segreta tramite inserimento dell'Utente
 	 * Ritorna la stringa inserita
+	 * 
+	 *fdsdhkjdhkjfddhkajfdsahkjfdkjhdahkjfddafhkjdfhkjdsakdjhfsdfkjhaafds
 	 */
 	public static String insertSecretWord(){
 		System.out.println("Inserisci la parola segreta: ");
