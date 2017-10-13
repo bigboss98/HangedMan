@@ -25,9 +25,6 @@ public class HangedMan {
 
 		int lengthWord = secretWord.length();
 		char[] word = new char[lengthWord];
-
-		System.out.print("\033[H\033[2J");//GIANLO COSA HAI MESSO??????????
-		System.out.flush();
 		
 		//Turno di gioco
 		while(errors <= MAX_ERRORS && !isWin) {
@@ -108,7 +105,7 @@ public class HangedMan {
 		//NON RIESCO A MOSTRARE LE PAROLE TROVATE
 		for(int x = 0; x < lengthWord;++x){
 			if(word[x] == ' '){
-				System.out.print("  ");
+				System.out.print(" _ ");
 			}else{
 				System.out.print(word[x]);
 			}
