@@ -26,22 +26,17 @@ public class HangedMan {
 		int lengthWord = secretWord.length();
 		char[] word = new char[lengthWord];
 
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+
 		//Turno di gioco
 		while(errors <= MAX_ERRORS && !isWin) {
-
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
-			secretWord = insertSecretWord();
 
 			System.out.println("\nTenta una lettera:");
 			insertedChar = input.nextLine();//Lettura carattere
