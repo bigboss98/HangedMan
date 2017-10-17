@@ -89,6 +89,16 @@ public class HangedMan {
 
 			}else{
 				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
 				errors++;
 			}
 
