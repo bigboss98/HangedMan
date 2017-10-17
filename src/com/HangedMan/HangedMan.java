@@ -34,6 +34,39 @@ public class HangedMan {
 		word = new char[lengthWord];
 		word = new char[lengthWord];
 		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+
 
 		//Turno di gioco
 		while(errors <= MAX_ERRORS && !isWin) {
