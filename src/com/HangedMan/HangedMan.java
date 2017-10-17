@@ -29,25 +29,19 @@ public class HangedMan {
 		//Turno di gioco
 		while(errors <= MAX_ERRORS && !isWin) {
 
-			// Voglio solo la maglietta :D
-			// 2
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-
-			System.out.println("\nTenta una lettera:");
-
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-			System.out.println("\nTenta una lettera:");
-
-			System.out.println("\nTenta una lettera:");
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
+			secretWord = insertSecretWord();
 
 			System.out.println("\nTenta una lettera:");
 			insertedChar = input.nextLine();//Lettura carattere
