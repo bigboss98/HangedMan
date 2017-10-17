@@ -26,10 +26,50 @@ public class HangedMan {
 		int lengthWord = secretWord.length();
 		char[] word = new char[lengthWord];
 
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+		word = new char[lengthWord];
+
+
 		//Turno di gioco
 		while(errors <= MAX_ERRORS && !isWin) {
-
-			// FA SCHIFO XDDDD
 
 			System.out.println("\nTenta una lettera:");
 			insertedChar = input.nextLine();//Lettura carattere
@@ -48,6 +88,16 @@ public class HangedMan {
 				word[index] = insertedChar.charAt(0);
 
 			}else{
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
+				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
 				System.out.println("La lettera " + insertedChar + "  non è contenuta la parola segreta");
 				errors++;
 			}
