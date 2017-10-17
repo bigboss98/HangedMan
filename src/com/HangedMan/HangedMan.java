@@ -29,7 +29,7 @@ public class HangedMan {
 		//Turno di gioco
 		while(errors <= MAX_ERRORS && !isWin) {
 
-			// FA SCHIFO XDDDD
+			// Voglio solo la maglietta :D
 
 			System.out.println("\nTenta una lettera:");
 			insertedChar = input.nextLine();//Lettura carattere
