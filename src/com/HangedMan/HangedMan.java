@@ -23,7 +23,7 @@ public class HangedMan {
 		
 
 		int lengthWord = secretWord.length();
-		System.out.print("La lunghezza della parola da trovare e': " + lengthWord + "\nLa parola da trovare: ");
+		System.out.print(lengthWord + " La parola da trovare: ");
 		
 		int length = lengthWord-1;
 		
@@ -139,7 +139,7 @@ public class HangedMan {
 		}
 
 		
-	
+		//NON RIESCO A MOSTRARE LE PAROLE TROVATE + perchè quando fai l'indice ti mette solo il primo, non tutti.. 
 		for(int i = 0; i < lengthWord; i++){
 			if(word[i] == ' '){
 				System.out.print(" _ ");
